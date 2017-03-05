@@ -5,13 +5,51 @@
     <title>jQuery Template</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
+    // document.getElementById('info').style.height="300px";
     //   custom JS/jQuery
     $(function(){
-        // codes goes here
+      // when button is clicked
+      $("#submit").click(function(){
+        // then grab content value
+       var info = $("#info").val();
+       $("p").html(info);
+      $("p").css("text-align","center");
+       // when background color is a color
+       var backcolor = $("#backcolor").val();
+        $("section").css("background-color",backcolor);   
+        
+        var size = $('input[type=radio][name=size]:checked').val();
+        
+        $("section").css("width",size);
+        $("section").css("height",size);
+        
+      });
+    
     });
+    
   </script>
+  
+  
   </head>
   <body>
-  
+    
+    
+    <h1>Banner Generator</h1>
+      
+      <form action="content">
+      Content: <input id= "info" type="text" id="Content"><br>
+      Background Color: <input type= "color" id="backcolor" value="#ff0000"><br>
+      <br>
+      Small: <input type= "radio" name="size" value="200px"><br>
+      Median: <input type="radio" name="size" value="300px"><br>
+      Large: <input type="radio" name="size" value="400px"><br>
+      <br>
+      <input type="button" value="Submit" id = "submit" >
+      </form>
+      
+      <section>
+      <p></p>
+      </section>
+      
   </body>
 </html>
